@@ -1,0 +1,234 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+// index
+$--gutter-x: 12px;
+$red: #891818;
+$space: (
+  "0": 0,
+  "1": 0.5rem,   // 8
+  "2": 1rem,     // 16
+  "3": 1.5rem,   // 24
+  "4": 2rem,     // 32
+  "5": 2.5rem,   // 40
+  "6": 3rem,     // 48
+  "7": 3.5rem,   // 56
+  "8": 4rem,     // 64
+);
+$font-size: (
+  "s": 1.25rem,  // 20
+  "m": 4rem,     // 64
+  "l": 5rem,     // 80
+);
+
+// @font-face {
+//   font-family: 'Roboto';
+//   unicode-range: U+00-024F;
+//   font-style: italic;
+// }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  // display: block;
+  text-decoration: none;
+  color: #fff;
+  transition: .5s;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+@each $key, $value in $space {
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+  .mr-#{$key} {
+    margin-right: $value;
+  }
+  .pb-#{$key} {
+    padding-bottom: $value;
+  }
+  .py-#{$key} {
+    padding: $value 0;
+  }
+}
+@each $key, $value in $font-size {
+  .fs-#{$key} {
+    font-size: $value;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.lh-m {
+  line-height: 1.75;
+}
+.lh-l {
+  line-height: 1.3125;
+}
+.fw-bold {
+  font-weight: 700;
+}
+
+.d-flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.justify-content-space-between {
+  justify-content: space-between;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.bg-black {
+  background: #000;
+}
+.text-white {
+  color: #fff;
+}
+.text-center {
+  text-align: center;
+}
+
+.banner {
+  height: 958px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(https://hexschool.github.io/webLayoutTraining1st/week2/banner.png) no-repeat center / cover;
+  color: #fff;
+  border: 1px solid #707070;
+  &__title {
+    font-size: 5rem;
+    line-height: 1.325;
+    font-weight: 900;
+  }
+  &__subtitle {
+    font-size: 1.5rem;
+    line-height: 1.75;
+  }
+  &__link {
+    display: inline-block;
+  }
+  &__photo {
+    display: block;
+  }
+}
+.about {
+  &__headshot {
+    margin-bottom: 1.25rem;
+  }
+  &__border {
+    width: 384px;
+    border: 1px solid #000;
+    margin: 0 auto;
+  }
+  &__disc {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: $red;
+    margin-right: 16px;
+  }
+  &__experience{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.75;
+    margin-top: 28px;
+  }
+}
+.brand {
+  &__title {
+    margin-bottom: .75rem;
+  }
+  &__content {
+    margin-bottom: 4.25rem;
+    font-size: 1.25rem;
+  }
+}
+
+.wrok-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 24px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.container {
+  width: 100%;
+  min-width: 332px;
+	margin: 0 auto;	
+}
+
+@media screen and (min-width: 856px) {
+  .wrok-card {
+    justify-content: center;
+    flex-direction: row;
+    padding-left: 0;
+  padding-right: 0;
+  }
+}
